@@ -1,7 +1,16 @@
+npm install node-fetch
+
+const fetch = require('node-fetch');
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const querystring = require('querystring');
+
+
 
 const prefix = '!';
+const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesnake", "shortfuse", "snowvalley", "warhead", "slaughterhouse", "piazza", "gray_outside_a", "sf_bluecar", "sf_whitecar", "PSST1", "PSST2", "1v5", "1v4mtp", "mikki", "melee", "modemtap", "r4z", "marcel", "oh"];
+
+var latest_vid_id = 'XXX';
 
 client.on('ready', () => {
     console.log('I am ready!');
@@ -10,9 +19,6 @@ client.on('ready', () => {
 client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
-	
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
 
 	// INFO
 	if (message.content === prefix+`info`) message.channel.send("'!list' gives a list of all available commands");
