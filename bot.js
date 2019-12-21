@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 const querystring = require('querystring');
 const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
+const fetch = require('node-fetch');
 
 
 
@@ -70,15 +71,15 @@ client.on('message', function(message) {
             .catch(console.error);
         }, 10 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
     }
-	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'
+	//let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'
 	//'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
-	fetch(url)
-	.then(res => res.json())
-	.then((out) => {
-		if (out.items[0].id.videoId !== latest_vid_id) {
-			latest_vid_id = out.items[0].id.videoId;
-			client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
-	});
+	//fetch(url)
+	//.then(res => res.json())
+	//.then((out) => {
+	//	if (out.items[0].id.videoId !== latest_vid_id) {
+	//		latest_vid_id = out.items[0].id.videoId;
+	//		client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
+	//});
 });
 
 
