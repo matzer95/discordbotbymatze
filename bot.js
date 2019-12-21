@@ -73,8 +73,8 @@ client.on('message', function(message) {
         var interval = setInterval (function () {
 			if (loopstatus !== 'on') return;
 			client.channels.get('657656218281705503').lastMessage.delete(1);
-            client.channels.get('657656218281705503').send("1")
-			loopnumber = loopnumber + 1;
+            client.channels.get('657656218281705503').send("1");
+			loopnumber = loopnumber + 1
             .catch(console.error);
         }, 10 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
     }
