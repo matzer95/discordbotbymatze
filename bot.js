@@ -66,6 +66,7 @@ client.on('message', async message => {
 
 client.on('message', function(message) {
 	if (message.content === "loopend") loopstatus = 'off';
+	if (message.content === "loopstart") loopstatus = 'on';
 	if (loopstatus !== 'on') return;
     else if (message.content === "loop") {
         var interval = setInterval (function () {
