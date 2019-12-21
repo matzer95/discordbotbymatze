@@ -66,8 +66,8 @@ client.on('message', async message => {
 
 client.on('message', function(message) {
 	if (message.content === "loopend") loopstatus = 'off';
-    if (message.content === "loop") {
-		if (loopstatus === 'off') break;
+	if (loopstatus !== 'on') return;
+    else if (message.content === "loop") {
         var interval = setInterval (function () {
 			client.channels.get('657656218281705503').lastMessage.delete(1);
             client.channels.get('657656218281705503').send("1")
