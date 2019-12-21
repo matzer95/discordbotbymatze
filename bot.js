@@ -18,26 +18,6 @@ client.on('ready', () => {
 //process.env.GGL_TOKEN
 
 
-client.on('message', function(message) {
-    if (message.content === "loop") {
-        var interval = setInterval (function () {
-			client.channels.get('657656218281705503').lastMessage.delete(1);
-            client.channels.get('657656218281705503').send("1")
-            .catch(console.error);
-        }, 10 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
-    }
-	let url = 'https://www.googleapis.com/youtube/v3/search?key='+g_token+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'
-	//'https://www.googleapis.com/youtube/v3/search?key='+g_token+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
-	fetch(url)
-	.then(res => res.json())
-	.then((out) => {
-		if (out.items[0].id.videoId !== latest_vid_id) {
-			latest_vid_id = out.items[0].id.videoId;
-			client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
-	});
-});
-
-
 client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -78,10 +58,25 @@ client.on('message', async message => {
 	//																						} else if (message.member.user.id !== '656839558788415518') message.delete(1);
 });
 
-//client.on('message', message => {
-//    if (message.content === 'ping') {
-//       message.reply('pong');
-//       }
-//});
+
+client.on('message', function(message) {
+    if (message.content === "loop") {
+        var interval = setInterval (function () {
+			client.channels.get('657656218281705503').lastMessage.delete(1);
+            client.channels.get('657656218281705503').send("1")
+            .catch(console.error);
+        }, 10 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
+    }
+	let url = 'https://www.googleapis.com/youtube/v3/search?key='+g_token+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'
+	//'https://www.googleapis.com/youtube/v3/search?key='+g_token+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
+	fetch(url)
+	.then(res => res.json())
+	.then((out) => {
+		if (out.items[0].id.videoId !== latest_vid_id) {
+			latest_vid_id = out.items[0].id.videoId;
+			client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
+	});
+});
+
 
 client.login(process.env.BOT_TOKEN);
