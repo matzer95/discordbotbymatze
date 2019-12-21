@@ -1,7 +1,6 @@
-const fetch = require('node-fetch');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const querystring = require('querystring');
+const fetch = require('node-fetch');
 
 
 
