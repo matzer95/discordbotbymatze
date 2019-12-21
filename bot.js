@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const fetch = require('node-fetch');
 const querystring = require('querystring');
 const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
-//const fetch = require('node-fetch');
+
 
 
 
