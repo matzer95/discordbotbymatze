@@ -47,7 +47,7 @@ client.on('message', async message => {
 	else if (message.content === prefix+`add_YT`) message.member.addRole('655357708773621770');
 	else if (message.content === prefix+`remove_YT`) message.member.removeRole('655357708773621770');
 	else if (message.content === prefix+`test1`) message.channel.send('Hello <@&655357708773621770>');
-	else if (message.content === prefix+`mytoken`) message.channel.send(process.env.BOT_TOKEN);
+	else if (message.content === prefix+`mytoken`) message.channel.send(process.env.GGL_TOKEN);
 	// NOT EXIST COMMAND
 	// else message.channel.send('This command does not exist.');
 	//																						} else if (message.member.user.id !== '656839558788415518') message.delete(1);
