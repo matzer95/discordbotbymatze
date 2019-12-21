@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 const querystring = require('querystring');
 const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 
 
 
@@ -13,6 +13,7 @@ const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesna
 
 var latest_vid_id = 'XXX';
 var loopstatus = 'on';
+var loopnumber = 1;
 
 
 client.on('ready', () => {
@@ -73,6 +74,7 @@ client.on('message', function(message) {
 			if (loopstatus !== 'on') return;
 			client.channels.get('657656218281705503').lastMessage.delete(1);
             client.channels.get('657656218281705503').send("1")
+			loopnumber = loopnumber + 1;
             .catch(console.error);
         }, 10 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
     }
