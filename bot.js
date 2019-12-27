@@ -12,14 +12,22 @@ const prefix = '!';
 const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesnake", "shortfuse", "snowvalley", "warhead", "slaughterhouse", "piazza", "gray_outside_a", "sf_bluecar", "sf_whitecar", "PSST1", "PSST2", "1v5", "1v4mtp", "mikki", "melee", "modemtap", "r4z", "marcel", "oh"];
 
 
-var latest_vid_id = 'XXX';
+var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
 
 
-client.on('ready', () => {
+client.once('ready', () => {
     console.log('I am ready!');
 });
 
+//		VVV   NEW   VVV
+
+client.on('ready', message => {
+	client.channels.get('657656218281705503').send("loop");
+});
+
+
+//		^^^   NEW   ^^^ 
 
 //process.env.GGL_TOKEN
 
@@ -78,7 +86,7 @@ client.on('message', function(message) {
         }, 3600 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
     }
 	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
-	//'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'	MY CHANNEL
+	//		  'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'	MY CHANNEL
 	fetch(url)
 	.then(res => res.json())
 	.then((out) => {
