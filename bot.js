@@ -20,16 +20,18 @@ client.once('ready', () => {
     console.log('I am ready!');
 });
 
-//		VVV   NEW   VVV
 
 client.on('ready', message => {
 	client.channels.get('657656218281705503').send("loop");
+	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
+	fetch(url)
+	.then(res => res.json())
+	.then((out) => {
+		if (out.items[0].id.videoId !== latest_vid_id) {
+			latest_vid_id = out.items[0].id.videoId;
+		};
+	});
 });
-
-
-//		^^^   NEW   ^^^ 
-
-//process.env.GGL_TOKEN
 
 
 client.on('message', async message => {
