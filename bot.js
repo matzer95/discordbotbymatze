@@ -23,7 +23,7 @@ client.once('ready', () => {
 
 client.on('ready', message => {
 	client.channels.get('657656218281705503').send("loop");
-	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
+	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId='+process.env.CHANNEL_ID+'&part=id&order=date&maxResults=1'
 	fetch(url)
 	.then(res => res.json())
 	.then((out) => {
@@ -88,7 +88,7 @@ client.on('message', function(message) {
             .catch(console.error);
         }, 3600 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
     }
-	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UC22lgsPNuxoOykjrjfXD18A&part=id&order=date&maxResults=1'
+	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId='+process.env.CHANNEL_ID+'&part=id&order=date&maxResults=1'
 	//		  'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'	MY CHANNEL
 	fetch(url)
 	.then(res => res.json())
