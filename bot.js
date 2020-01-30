@@ -71,6 +71,7 @@ client.on('message', async message => {
 	else if (message.content === prefix+`remove_YT`) message.member.removeRole('655357708773621770');
 	else if (message.content === prefix+`test1`) message.channel.send('Hello <@&655357708773621770>');
 	else if (message.content === prefix+`test2`) console.log(latest_vid_id);
+	else if (message.content === prefix+`test3`) message.channel.send(mastery5);
 	// NOT EXIST COMMAND
 	// else message.channel.send('This command does not exist.');
 	//																						} else if (message.member.user.id !== '656839558788415518') message.delete(1);
@@ -98,7 +99,7 @@ client.on('message', function(message) {
 			latest_vid_id = out.items[0].id.videoId;
 			client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
 	});
-		client.channels.get('657656218281705503').send("loop");			
+		//client.channels.get('657656218281705503').send("loop");																							// HIER CHANGE!!! // weg
 	//
 
 
