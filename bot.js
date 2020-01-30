@@ -15,7 +15,7 @@ const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesna
 var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
 var i;
-var mastery5 = [];
+var mastery5 = ["abc"];
 
 client.once('ready', () => {
     console.log('I am ready!');
@@ -110,10 +110,8 @@ client.on('message', function(message) {
 	fetch(riot_url)
 	.then(res => res.json())
 	.then((out) => {
-		for (i = 1; i < 999; i++) {
-			if (out[0].championLevel === 5) {
-				mastery5.push(out[0].championId);
-			};
+		if (1===1) { //out[0].championLevel === 5) {
+			mastery5.push(out);
 		};
 	});
 });
