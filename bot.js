@@ -14,8 +14,7 @@ const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesna
 
 var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
-var i;
-var mastery5 = ["abc"];
+
 
 client.once('ready', () => {
     console.log('I am ready!');
@@ -71,7 +70,6 @@ client.on('message', async message => {
 	else if (message.content === prefix+`remove_YT`) message.member.removeRole('655357708773621770');
 	else if (message.content === prefix+`test1`) message.channel.send('Hello <@&655357708773621770>');
 	else if (message.content === prefix+`test2`) console.log(latest_vid_id);
-	else if (message.content === prefix+`test3`) message.channel.send(mastery5);
 	// NOT EXIST COMMAND
 	// else message.channel.send('This command does not exist.');
 	//																						} else if (message.member.user.id !== '656839558788415518') message.delete(1);
@@ -88,31 +86,13 @@ client.on('message', function(message) {
 			client.channels.get('657656218281705503').lastMessage.delete(1);
             client.channels.get('657656218281705503').send("1")
             .catch(console.error);
-        }, 3600 * 1000);														// AUF QUOTA AUFPASSEN LMFAO		// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
+        }, 3600 * 1000);														// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
     }
-	let url = 'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId='+process.env.CHANNEL_ID+'&part=id&order=date&maxResults=1'
-	//		  'https://www.googleapis.com/youtube/v3/search?key='+process.env.GGL_TOKEN+'&channelId=UCccA3FVBQOCum8PM_2F3AfA&part=id&order=date&maxResults=1'	MY CHANNEL
+	let url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
 	fetch(url)
 	.then(res => res.json())
 	.then((out) => {
-		if (out.items[0].id.videoId !== latest_vid_id) {
-			latest_vid_id = out.items[0].id.videoId;
-			client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
-	});
-		//client.channels.get('657656218281705503').send("loop");																							// HIER CHANGE!!! // weg
-	//
-
-
-
-
-	//
-	let riot_url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
-	fetch(riot_url)
-	.then(res => res.json())
-	.then((out) => {
-		if (1===1) { //out[0].championLevel === 5) {
-			mastery5.push(out);
-		};
+		mastery5 = out[0].championId;
 	});
 });
 
