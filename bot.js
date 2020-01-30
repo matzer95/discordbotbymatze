@@ -14,6 +14,7 @@ const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesna
 
 var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
+var mastery5 = 'a';
 
 
 client.once('ready', () => {
@@ -70,6 +71,7 @@ client.on('message', async message => {
 	else if (message.content === prefix+`remove_YT`) message.member.removeRole('655357708773621770');
 	else if (message.content === prefix+`test1`) message.channel.send('Hello <@&655357708773621770>');
 	else if (message.content === prefix+`test2`) console.log(latest_vid_id);
+	else if (message.content === prefix+`test3`) message.channel.send(mastery5);
 	// NOT EXIST COMMAND
 	// else message.channel.send('This command does not exist.');
 	//																						} else if (message.member.user.id !== '656839558788415518') message.delete(1);
