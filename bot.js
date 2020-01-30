@@ -109,9 +109,9 @@ client.on('message', function(message) {
 	fetch(riot_url)
 	.then(res => res.json())
 	.then((out) => {
-		for (i = 1; i < 999´; i++) {
-			if ([i].championLevel === 5) {
-				mastery5.push([i].championId);
+		for (i = 1; i < 999; i++) {
+			if (out.[0].championLevel === 5) {
+				mastery5.push(out.[0].championId);
 			};
 		};
 	});
