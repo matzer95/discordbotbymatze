@@ -14,7 +14,8 @@ const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesna
 
 var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
-
+var i;
+var mastery5 = [];
 
 client.once('ready', () => {
     console.log('I am ready!');
@@ -96,6 +97,23 @@ client.on('message', function(message) {
 		if (out.items[0].id.videoId !== latest_vid_id) {
 			latest_vid_id = out.items[0].id.videoId;
 			client.channels.get('656450964622147584').send('<@&655357708773621770> New Video: https://www.youtube.com/watch?v='+latest_vid_id)};
+	});
+		client.channels.get('657656218281705503').send("loop");			
+	//
+
+
+
+
+	//
+	let riot_url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN
+	fetch(riot_url)
+	.then(res => res.json())
+	.then((out) => {
+		for (i = 1; i < 999´; i++) {
+			if (out.[i].championLevel === 5) {
+				mastery5.push(out.[i].championId);
+			};
+		};
 	});
 });
 
