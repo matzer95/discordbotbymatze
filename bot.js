@@ -87,7 +87,7 @@ client.on('message', function(message) {
 		fetch(url)
 		.then(res => res.json())
 		.then((out) => {
-			for (x in out.data)
+			for (x in out.data) {
 				mastery5.push(out.data.x.key);
 			};
 		});
