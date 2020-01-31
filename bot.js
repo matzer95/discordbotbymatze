@@ -16,6 +16,7 @@ var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
 var mastery5 = [];
 var i;
+var x;
 
 
 client.once('ready', () => {
@@ -86,7 +87,9 @@ client.on('message', function(message) {
 		fetch(url)
 		.then(res => res.json())
 		.then((out) => {
-			mastery5.push(out.data.Aatrox.key);
+			for (x in out.data)
+				mastery5.push(out.data.x.key);
+			};
 		});
 //		.then((out) => {
 //		let url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
