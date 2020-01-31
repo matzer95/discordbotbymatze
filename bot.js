@@ -15,6 +15,7 @@ const list_of_commands = ["info", "docs", "grayhammer", "powersurge", "rattlesna
 var latest_vid_id = 'VID_ID';
 var loopstatus = 'on';
 var mastery5 = [];
+var i;
 
 
 client.once('ready', () => {
@@ -85,7 +86,11 @@ client.on('message', function(message) {
 		fetch(url)
 		.then(res => res.json())
 		.then((out) => {
-			mastery5.push(out[1].championId);
+			for (i = 0; i < 999; i++) {
+				if (out[i].championLevel === 5) {
+					mastery5.push(out[1].championId);
+				};
+			};
 		});
 	};
 });
