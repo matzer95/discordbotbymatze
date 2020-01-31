@@ -85,7 +85,7 @@ client.on('message', function(message) {
 		fetch(url)
 		.then(res => res.json())
 		.then((out) => {
-			mastery5.push(out[0].championId);
+			mastery5.push(out[1].championId);
 		});
 	};
 });
