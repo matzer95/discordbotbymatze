@@ -79,23 +79,15 @@ client.on('message', async message => {
 
 
 client.on('message', function(message) {
-	if (message.content === "loopend") loopstatus = 'off';
-	if (message.content === "loopstart") loopstatus = 'on';
-	if (loopstatus !== 'on') return;
-    else if (message.content === "loop") {
-        var interval = setInterval (function () {
-			if (loopstatus !== 'on') return;
-			client.channels.get('657656218281705503').lastMessage.delete(1);
-            client.channels.get('657656218281705503').send("1")
-            .catch(console.error);
-        }, 3600 * 1000);														// SOURCE: https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
-    }
-	let url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
-	fetch(url)
-	.then(res => res.json())
-	.then((out) => {
-		mastery5.push(out[0].championId);
-	});
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+	if (message.content === prefix+`test4`) {
+		let url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
+		fetch(url)
+		.then(res => res.json())
+		.then((out) => {
+			mastery5.push(out[0].championId);
+		});
+	};
 });
 
 
