@@ -82,16 +82,23 @@ client.on('message', async message => {
 client.on('message', function(message) {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test4`) {
-		let url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
+		let url = 'http://ddragon.leagueoflegends.com/cdn/10.2.1/data/en_US/champion.json';
 		fetch(url)
 		.then(res => res.json())
 		.then((out) => {
-			for (i = 0; i < 999; i++) {
-				if (out[i].championLevel === 5) {
-					mastery5.push(out[i].championId);
-				};
-			};
+			mastery5.push(out.data.Aatrox.key);
 		});
+//		.then((out) => {
+//		let url = 'https://euw1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+process.env.SUMM_ID+'?api_key='+process.env.RIOT_TOKEN;
+//		fetch(url)
+//		.then(res => res.json())
+//		.then((out) => {
+//			for (i = 0; i < 999; i++) {
+//				if (out[i].championLevel === 5) {
+//					mastery5.push(out[i].championId);
+//				};
+//			};
+//		});
 	};
 });
 
