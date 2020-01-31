@@ -88,7 +88,7 @@ client.on('message', function(message) {
 		.then((out) => {
 			for (i = 0; i < 999; i++) {
 				if (out[i].championLevel === 5) {
-					mastery5.push(out[1].championId);
+					mastery5.push(out[i].championId);
 				};
 			};
 		});
