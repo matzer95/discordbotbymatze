@@ -48,7 +48,7 @@ client.on('message', async message => {
 	else if (message.content === prefix+`oh`) message.channel.send('https://www.youtube.com/watch?v=2KZuZknEI4c');
 	else if (message.content === prefix+`test2`) console.log(latest_vid_id);
 	else if (message.content === prefix+`test3`) message.channel.send(xyz);
-	else if (message.content === prefix+`test4`) message.channel.send(xy);
+	else if (message.content === prefix+`test4`) message.channel.send('```'+xy+'```');
 });
 
 
