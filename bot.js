@@ -32,6 +32,7 @@ client.on('message', async message => {
 	else if (message.content === prefix+`test3`) message.channel.send(xyz);
 	else if (message.content === prefix+`test4`) message.channel.send(
 		'``` #  Name				Points'+"\n"+
+		'-----------------------------------'
 		' '+xy[0][0]+'  '+xy[0][1]+'			'+xy[0][2]+"\n"+
 		' '+xy[1][0]+'  '+xy[1][1]+'			'+xy[1][2]+"\n"+
 		' '+xy[2][0]+'  '+xy[2][1]+'			'+xy[2][2]+"\n"+
