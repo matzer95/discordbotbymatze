@@ -29,7 +29,7 @@ client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log(xy);
 	else if (message.content === prefix+`standings`)
-		setTimeout(function(){console.log("Ready")}, 1000);
+		setTimeout(function(){console.log("Ready")}, 3000);
 		message.channel.send(
 		'``` #  Name				Points'+"\n"+
 		'-------------------------------'+"\n"+
