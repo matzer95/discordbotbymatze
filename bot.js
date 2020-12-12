@@ -15,7 +15,7 @@ client.once('ready', () => {
 });
 
 
-client.on('ready', message => {
+client.on('message', message => {
 	let url = 'https://sheets.googleapis.com/v4/spreadsheets/1Wqlovr44XVOGj8dimevZnUbgRk7OX8rfFDSexGARqwo/values/\'General%20Stats\'!B5:D16?key='+process.env.GGL_TOKEN
 	fetch(url)
 	.then(res => res.json())
