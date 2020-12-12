@@ -8,11 +8,8 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 const prefix = '!';
 
 var latest_vid_id = 'VID_ID';
-var loopstatus = 'on';
 var mastery5 = [];
 var i;
-var x;
-
 
 client.once('ready', () => {
     console.log('I am ready!');
@@ -35,8 +32,7 @@ client.on('ready', message => {
 client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
-	if (message.content === prefix+`info`) message.channel.send("'!list' gives a list of all available commands");
-	else if (message.content === prefix+`sf_bluecar`) message.channel.send('https://imgur.com/a/zMdzP');
+	if (message.content === prefix+`sf_bluecar`) message.channel.send('https://imgur.com/a/zMdzP');
 	else if (message.content === prefix+`marcel`) message.channel.send('https://www.youtube.com/watch?v=RFWbO4hvsvA');
 	else if (message.content === prefix+`oh`) message.channel.send('https://www.youtube.com/watch?v=2KZuZknEI4c');
 	else if (message.content === prefix+`test2`) console.log(latest_vid_id);
