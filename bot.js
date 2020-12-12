@@ -36,7 +36,7 @@ client.on('ready', message => {
 	fetch(url)
 	.then(res => res.json())
 	.then((out) => {
-		xy = out.values[1];
+		xy = out.values[1][1];
 	});
 });
 
