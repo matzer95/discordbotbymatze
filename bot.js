@@ -20,7 +20,7 @@ client.on('ready', message => {
 	fetch(url)
 	.then(res => res.json())
 	.then((out) => {
-		xy = out.values[1];
+		xy = out.values;
 	});
 });
 
@@ -30,7 +30,7 @@ client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log(xy);
 	else if (message.content === prefix+`test3`) message.channel.send(xyz);
-	else if (message.content === prefix+`test4`) message.channel.send('```'+xy[0]+' '+xy[1]+'```');
+	else if (message.content === prefix+`test4`) message.channel.send('```#'+xy[1][0]+' '+xy[1][1]+'```');
 });
 
 
