@@ -7,7 +7,6 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 
 const prefix = '!';
 
-var Standings;
 var xy;
 
 client.once('ready', () => {
@@ -29,8 +28,9 @@ client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log(xy);
-	else if (message.content === prefix+`test3`) message.channel.send(xyz);
-	else if (message.content === prefix+`test4`) message.channel.send(
+	else if (message.content === prefix+`standings`)
+		setTimeout(function(){console.log("Ready")}, 1000);
+		message.channel.send(
 		'``` #  Name				Points'+"\n"+
 		'-------------------------------'+"\n"+
 		' '+xy[0][0]+'  '+xy[0][1]+' '+" ".repeat(20-xy[0][1].length)+xy[0][2]+"\n"+
