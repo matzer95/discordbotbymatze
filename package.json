@@ -16,6 +16,7 @@
     "googleapis": "^66.0.0",
     "node": "^15.4.0",
     "node-fetch": "^2.6.1",
-    "request": "2.81.0"
+    "request": "2.81.0",
+    "websocket": "^1.0.33"
   }
 }
