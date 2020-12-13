@@ -13,6 +13,23 @@ client.once('ready', () => {
     console.log('Ready');
 });
 
+const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
 client.on('message', message => {
 	let url = 'https://sheets.googleapis.com/v4/spreadsheets/1Wqlovr44XVOGj8dimevZnUbgRk7OX8rfFDSexGARqwo/values/\'General%20Stats\'!B5:D16?key='+process.env.GGL_TOKEN
@@ -28,25 +45,7 @@ client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log('test');
-	else if (message.content === prefix+`test1`)
-		const exampleEmbed = new Discord.MessageEmbed()
-			.setColor('#0099ff')
-			.setTitle('Some title')
-			.setURL('https://discord.js.org/')
-			.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-			.setDescription('Some description here')
-			.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-			.addFields(
-				{ name: 'Regular field title', value: 'Some value here' },
-				{ name: '\u200B', value: '\u200B' },
-				{ name: 'Inline field title', value: 'Some value here', inline: true },
-				{ name: 'Inline field title', value: 'Some value here', inline: true },
-			)
-			.addField('Inline field title', 'Some value here', true)
-			.setImage('https://i.imgur.com/wSTFkRM.png')
-			.setTimestamp()
-			.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-		message.channel.send(exampleEmbed);
+	else if (message.content === prefix+`test1`) message.channel.send(exampleEmbed);
 	else if (message.content === prefix+`standings`)
 		message.channel.send(
 		'``` #  Name				Points'+"\n"+
