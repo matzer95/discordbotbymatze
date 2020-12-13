@@ -13,7 +13,7 @@ client.once('ready', () => {
     console.log('Ready');
 });
 
-const exampleEmbed = new Discord.MessageEmbed()
+const exampleEmbed = new Discord.MessageEmbed() {
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
@@ -30,6 +30,7 @@ const exampleEmbed = new Discord.MessageEmbed()
 	.setImage('https://i.imgur.com/wSTFkRM.png')
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+};
 
 client.on('message', message => {
 	let url = 'https://sheets.googleapis.com/v4/spreadsheets/1Wqlovr44XVOGj8dimevZnUbgRk7OX8rfFDSexGARqwo/values/\'General%20Stats\'!B5:D16?key='+process.env.GGL_TOKEN
