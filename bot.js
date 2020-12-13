@@ -28,7 +28,6 @@ client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log('test');
-	else if (message.content === prefix+`test1`) message.channel.send('hi');
 	else if (message.content === prefix+`standings`)
 		message.channel.send(
 		'``` #  Name				Points'+"\n"+
