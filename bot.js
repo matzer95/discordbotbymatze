@@ -13,9 +13,6 @@ client.once('ready', () => {
     console.log('Ready');
 });
 
-const exampleEmbed = new Discord.RichEmbed()
-	.setTitle('Some title');
-
 
 client.on('message', message => {
 	let url = 'https://sheets.googleapis.com/v4/spreadsheets/1Wqlovr44XVOGj8dimevZnUbgRk7OX8rfFDSexGARqwo/values/\'General%20Stats\'!B5:D16?key='+process.env.GGL_TOKEN
@@ -31,7 +28,7 @@ client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log('test');
-	else if (message.content === prefix+`test1`) message.channel.send(exampleEmbed);
+	else if (message.content === prefix+`test1`) message.channel.send('hi');
 	else if (message.content === prefix+`standings`)
 		message.channel.send(
 		'``` #  Name				Points'+"\n"+
