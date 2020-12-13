@@ -28,8 +28,7 @@ client.on('message', async message => {
 	console.log(message.content);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	if (message.content === prefix+`test2`) console.log('test');
-	else if (message.content === prefix+`test1`) {
-		
+	else if (message.content === prefix+`test1`)
 		const exampleEmbed = new Discord.MessageEmbed()
 			.setColor('#0099ff')
 			.setTitle('Some title')
@@ -47,11 +46,7 @@ client.on('message', async message => {
 			.setImage('https://i.imgur.com/wSTFkRM.png')
 			.setTimestamp()
 			.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-	
 		message.channel.send(exampleEmbed);
-	
-	};
-	
 	else if (message.content === prefix+`standings`)
 		message.channel.send(
 		'``` #  Name				Points'+"\n"+
