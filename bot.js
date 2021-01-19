@@ -8,7 +8,7 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 const prefix = '?';
 
 
-const exampleEmbed = new Discord.MessageEmbed()
+const embed1 = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
@@ -66,7 +66,7 @@ client.on('message', async message => {
 		xy[11][0]+'  '+xy[11][1]+' '+" ".repeat(20-xy[11][1].length)+xy[11][2]+'```'
 	);
 	else if (message.content === prefix+`123`)
-		message.channel.send('hello')
+		message.channel.send(embed1)
 });
 
 
