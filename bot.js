@@ -7,25 +7,11 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 
 const prefix = '?';
 
-var testvar = 'HUND';
-
-const embed1 = new Discord.MessageEmbed()
-	.setColor('#34d9d1')
-	.setTitle('Current Standings')
-	.addFields(
-		{ name: '#', value: testvar, inline: true },
-		{ name: 'Name', value: 'xyyayad', inline: true },
-		{ name: 'Points', value: '11299', inline: true },
-	)
-	.setTimestamp();
-
-
 var xy;
 
 client.once('ready', () => {
     console.log('Ready');
 });
-
 
 client.on('message', message => {
 	let url = 'https://sheets.googleapis.com/v4/spreadsheets/1Wqlovr44XVOGj8dimevZnUbgRk7OX8rfFDSexGARqwo/values/\'General%20Stats\'!B5:D16?key='+process.env.GGL_TOKEN
@@ -36,6 +22,15 @@ client.on('message', message => {
 	});
 });
 
+const embed1 = new Discord.MessageEmbed()
+	.setColor('#34d9d1')
+	.setTitle('Current Standings')
+	.addFields(
+		{ name: '#', value: xy[0][1], inline: true },
+		{ name: 'Name', value: 'xyyayad', inline: true },
+		{ name: 'Points', value: '11299', inline: true },
+	)
+	.setTimestamp();
 
 client.on('message', async message => {
 	console.log(message.content);
