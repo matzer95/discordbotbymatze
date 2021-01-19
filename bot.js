@@ -26,7 +26,7 @@ const embed1 = new Discord.MessageEmbed()
 	.setColor('#34d9d1')
 	.setTitle('Current Standings')
 	.addFields(
-		{ name: '#', value: ''+xy[0][1], inline: true },
+		{ name: '#', value: 'Mitch', inline: true },
 		{ name: 'Name', value: 'xyyayad', inline: true },
 		{ name: 'Points', value: '11299', inline: true },
 	)
