@@ -9,12 +9,8 @@ const prefix = '?';
 
 
 const embed1 = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.setColor('#34d9d1')
+	.setTitle('Current Standings')
 	.addFields(
 		{ name: 'Regular field title', value: 'Some value here' },
 		{ name: '\u200B', value: '\u200B' },
@@ -22,9 +18,7 @@ const embed1 = new Discord.MessageEmbed()
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 	)
 	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
-	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+	.setTimestamp();
 
 
 var xy;
