@@ -45,6 +45,28 @@ client.on('message', async message => {
 		xy[10][0]+'  '+xy[10][1]+' '+" ".repeat(20-xy[10][1].length)+xy[10][2]+"\n"+
 		xy[11][0]+'  '+xy[11][1]+' '+" ".repeat(20-xy[11][1].length)+xy[11][2]+'```'
 	);
+	
+	else if (message.content === prefix+`123`)
+		const exampleEmbed = new Discord.MessageEmbed()
+			.setColor('#0099ff')
+			.setTitle('Some title')
+			.setURL('https://discord.js.org/')
+			.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+			.setDescription('Some description here')
+			.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+			.addFields(
+				{ name: 'Regular field title', value: 'Some value here' },
+				{ name: '\u200B', value: '\u200B' },
+				{ name: 'Inline field title', value: 'Some value here', inline: true },
+				{ name: 'Inline field title', value: 'Some value here', inline: true },
+			)
+			.addField('Inline field title', 'Some value here', true)
+			.setImage('https://i.imgur.com/wSTFkRM.png')
+			.setTimestamp()
+			.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+			
+		channel.send(exampleEmbed);
+	
 });
 
 
