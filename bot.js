@@ -22,7 +22,7 @@ client.on('message', message => {
 	});
 });
 
-const embed1 = new Discord.MessageEmbed()
+var embed1 = new Discord.MessageEmbed()
 	.setColor('#34d9d1')
 	.setTitle('Current Standings')
 	.addFields(
