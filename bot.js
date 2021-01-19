@@ -7,12 +7,13 @@ const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : s
 
 const prefix = '?';
 
+var testvar = 'HUND';
 
 const embed1 = new Discord.MessageEmbed()
 	.setColor('#34d9d1')
 	.setTitle('Current Standings')
 	.addFields(
-		{ name: '#', value: xy[0][0], inline: true },
+		{ name: '#', value: testvar, inline: true },
 		{ name: 'Name', value: 'xyyayad', inline: true },
 		{ name: 'Points', value: '11299', inline: true },
 	)
