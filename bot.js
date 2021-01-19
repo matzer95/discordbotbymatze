@@ -12,9 +12,9 @@ const embed1 = new Discord.MessageEmbed()
 	.setColor('#34d9d1')
 	.setTitle('Current Standings')
 	.addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-	)
+		{ name: 'Inline field title', value: 'Rank', inline: true },
+		{ name: 'Inline field title', value: 'Name', inline: true },
+		{ name: 'Inline field title', value: 'points', inline: true },
 	.setTimestamp();
 
 
