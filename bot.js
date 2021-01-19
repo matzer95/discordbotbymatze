@@ -15,9 +15,9 @@ const embed1 = new Discord.MessageEmbed()
 		{ name: 'Rank', value: '1', inline: true },
 		{ name: 'Name', value: 'Mitch', inline: true },
 		{ name: 'Points', value: '112', inline: true },
-		{ name: value: '12'},
-		{ name: value: 'Antogaming101', inline: true },
-		{ name: value: '99', inline: true },
+		{ value: '12'},
+		{ value: 'Antogaming101', inline: true },
+		{ value: '99', inline: true },
 	)
 	.setTimestamp();
 
